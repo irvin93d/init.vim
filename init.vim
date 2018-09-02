@@ -33,16 +33,18 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " Git Gutter
 Plug 'airblade/vim-gitgutter'
 
+" Vim-go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+
 " ALE
-"Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 " git-blame.vim
 "Plug 'zivyangll/git-blame.vim'
 " Add javascript (dunno what it does)
 "Plug 'pangloss/vim-javascript'
 " Surround
 "Plug 'tpope/vim-surround'
-" Vim-go
-"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -57,6 +59,8 @@ let g:deoplete#enable_at_startup = 1
 
 " Fuzzy finder
 map <F3> :FZF<CR>
+"map <C-u> :Buffers<CR>
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
