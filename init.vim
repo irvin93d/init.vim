@@ -6,17 +6,11 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
-" ALE
-Plug 'w0rp/ale'
-
-" git-blame.vim
-Plug 'zivyangll/git-blame.vim'
-
-" Add javascript (dunno what it does)
-Plug 'pangloss/vim-javascript'
-
-" Completion
-Plug 'valloric/youcompleteme'
+" Deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 
 " Editor config
 Plug 'editorconfig/editorconfig-vim'
@@ -24,9 +18,6 @@ Plug 'editorconfig/editorconfig-vim'
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
-" Git Gutter
-Plug 'airblade/vim-gitgutter'
 
 " Lightline
 Plug 'itchyny/lightline.vim'
@@ -39,11 +30,19 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" Surround
-Plug 'tpope/vim-surround'
+" Git Gutter
+Plug 'airblade/vim-gitgutter'
 
+" ALE
+"Plug 'w0rp/ale'
+" git-blame.vim
+"Plug 'zivyangll/git-blame.vim'
+" Add javascript (dunno what it does)
+"Plug 'pangloss/vim-javascript'
+" Surround
+"Plug 'tpope/vim-surround'
 " Vim-go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -52,6 +51,9 @@ let g:go_fmt_command = "goimports"
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
 
 " Fuzzy finder
 map <F3> :FZF<CR>
