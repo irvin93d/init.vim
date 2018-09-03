@@ -6,32 +6,36 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
+" Appearance
+Plug 'kaicataldo/material.vim'
+Plug 'itchyny/lightline.vim'
+
+" Completion and linting
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
+Plug 'ervandew/supertab'
+Plug 'w0rp/ale'
 
+" Editing
+Plug 'editorconfig/editorconfig-vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+
+" Git
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
-Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
+
+" Navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'kaicataldo/material.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-
-
-" ALE
-Plug 'w0rp/ale'
-" git-blame.vim
-"Plug 'zivyangll/git-blame.vim'
-" Add javascript (dunno what it does)
-"Plug 'pangloss/vim-javascript'
-" Surround
-"Plug 'tpope/vim-surround'
 
 call plug#end()
 
@@ -40,6 +44,9 @@ let g:go_fmt_command = "goimports"
 "let g:ale_fix_on_save = 1
 let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
+
+let g:SuperTabDefaultCompletionType = "context"
+
 
 
 let g:fzf_action = {
@@ -89,7 +96,16 @@ set tabstop=4
 set updatetime=400
 
 " Theme related stuff
-let g:lightline = { 'colorscheme': 'material_vim' }
+let g:lightline = {
+      \ 'colorscheme': 'material_vim',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 let g:material_terminal_italics = 1
 set background=dark
 colorscheme material
