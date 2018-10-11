@@ -49,6 +49,8 @@ let g:SuperTabDefaultCompletionType = "context"
 
 
 
+let g:go_guru_scope = ["gitlab.services.ams.osa/opera-mobile/opera-pay/"]
+
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
@@ -58,7 +60,7 @@ let g:fzf_action = {
 let g:deoplete#enable_at_startup = 1
 
 " Fuzzy finder
-map <F3> :FZF<CR>
+map <C-p> :FZF<CR>
 "map <C-u> :Buffers<CR>
 "let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 let g:fzf_action = {
@@ -80,10 +82,19 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+
 nmap <F4> :TagbarToggle<CR>
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
+
+map <F5> :GoTest<CR>
+map <F6> :GoCoverageToggle<CR>
 
 " Other settings
 set expandtab
@@ -94,6 +105,9 @@ set relativenumber
 set shiftwidth=4
 set tabstop=4
 set updatetime=400
+
+" Set Jenkins
+au BufNewFile,BufRead Jenkinsfile setf groovy
 
 " Theme related stuff
 let g:lightline = {
