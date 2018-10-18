@@ -85,6 +85,14 @@ let g:fzf_colors =
 " Format json
 command Jsonf %!python -m json.tool
 
+
+command -range=% Shuf <line1>,<line2>!shuf
+cnoreabbrev shuf Shuf
+command -range=% Rev <line1>,<line2>!tac
+cnoreabbrev rev Rev
+command -range=% Mir <line1>,<line2>!rev
+cnoreabbrev mir Mir
+
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
