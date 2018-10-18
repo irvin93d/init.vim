@@ -21,7 +21,7 @@ Plug 'w0rp/ale'
 
 " Editing
 Plug 'editorconfig/editorconfig-vim'
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 
@@ -81,6 +81,9 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+" Format json
+command Jsonf %!python -m json.tool
 
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
