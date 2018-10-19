@@ -83,8 +83,7 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 " Format json
-command Jsonf %!python -m json.tool
-
+command -range=% Jsonf <line1>,<line2>!python -m json.tool
 
 command -range=% Shuf <line1>,<line2>!shuf
 cnoreabbrev shuf Shuf
@@ -99,13 +98,15 @@ command! -bang -nargs=* Ag
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
 
-nmap <F4> :TagbarToggle<CR>
+map <F4> :TagbarToggle<CR>
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
 
 map <F5> :GoTest<CR>
 map <F6> :GoCoverageToggle<CR>
+
+map <C-S-p> :Ag!
 
 " Other settings
 set expandtab
