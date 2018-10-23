@@ -102,6 +102,8 @@ map <F4> :TagbarToggle<CR>
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
+let NERDTreeMapOpenVSplit='v'
+let NERDTreeMapOpenSplit='s'
 
 map <F5> :GoTest<CR>
 map <F6> :GoCoverageToggle<CR>
