@@ -1,7 +1,15 @@
+let mapleader=" "
 
-map <F4> :TagbarToggle<CR>
-" NERDTree
-map <F2> :NERDTreeToggle<CR>
+nnoremap <Leader> <space> :Commands<CR>
+
+
+nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F4> :TagbarToggle<CR>
+nnoremap <Leader>fp :FZF<CR>
+nnoremap <Leader>ff :Rg!<CR>
+nnoremap <Leader>fF :Rg! 
+nnoremap <Leader>fb :Buffers<CR>
+
 let NERDTreeMapOpenVSplit='v'
 let NERDTreeMapOpenSplit='s'
 
@@ -9,16 +17,10 @@ cnoreabbrev shuf Shuffle
 cnoreabbrev rev Reverse
 cnoreabbrev mir Mirror
 
-"map <C-_> :Ag!
-
-" Fuzzy finder
-map <C-p> :FZF<CR>
-"map <C-u> :Buffers<CR>
-"let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-map <F5> :GoTest<CR>
-map <F6> :GoCoverageToggle<CR>
+autocmd FileType go nnoremap <F5> :GoTest<CR>
+autocmd FileType go nnoremap <F6> :GoCoverageToggle<CR>
