@@ -25,6 +25,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 
+" Syntax
+Plug 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+
 " Git
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
