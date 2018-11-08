@@ -1,5 +1,6 @@
 " Format json
 command -range=% FormatJson <line1>,<line2>!python -m json.tool
+command -range=% FormatJs <line1>,<line2>!js-beautify
 
 command -range=% Shuffle <line1>,<line2>!shuf
 command -range=% Reverse <line1>,<line2>!tac
