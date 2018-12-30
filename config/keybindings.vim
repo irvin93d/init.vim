@@ -2,7 +2,6 @@ let mapleader=" "
 
 nnoremap <Leader> <space> :Commands<CR>
 
-
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F4> :TagbarToggle<CR>
 nnoremap <Leader>fp :FZF<CR>
