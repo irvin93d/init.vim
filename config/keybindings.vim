@@ -22,7 +22,5 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-autocmd FileType go nnoremap <F5> :GoTest<CR>
-autocmd FileType go nnoremap <F6> :GoCoverageToggle<CR>
 
 

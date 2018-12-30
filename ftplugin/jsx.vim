@@ -1,1 +1,1 @@
-noremap <silent> <Leader>ef :call JsxBeautify()<cr>
+noremap <buffer> <silent> <Leader>ef :call JsxBeautify()<cr>

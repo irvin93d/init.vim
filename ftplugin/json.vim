@@ -1,1 +1,1 @@
-noremap <silent> <Leader>ef :call JsonBeautify()<cr>
+noremap <buffer> <silent> <Leader>ef :call JsonBeautify()<cr>

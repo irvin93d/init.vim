@@ -1,1 +1,1 @@
-noremap <silent> <Leader>ef :call HtmlBeautify()<cr>
+noremap <buffer> <silent> <Leader>ef :call HtmlBeautify()<cr>
