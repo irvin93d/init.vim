@@ -21,6 +21,8 @@ Plug 'w0rp/ale'
 
 " Editing
 Plug 'editorconfig/editorconfig-vim'
+Plug 'maksimr/vim-jsbeautify'
+
 "Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'

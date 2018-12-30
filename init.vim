@@ -1,3 +1,4 @@
+filetype plugin indent on
 source $HOME/.config/nvim/config/plug.vim
 source $HOME/.config/nvim/config/appearance.vim
 source $HOME/.config/nvim/config/filetypes.vim

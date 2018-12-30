@@ -24,3 +24,5 @@ let g:fzf_action = {
 
 autocmd FileType go nnoremap <F5> :GoTest<CR>
 autocmd FileType go nnoremap <F6> :GoCoverageToggle<CR>
+
+
