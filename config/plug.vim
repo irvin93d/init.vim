@@ -17,7 +17,7 @@ Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
 Plug 'ervandew/supertab'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 " Editing
 Plug 'editorconfig/editorconfig-vim'
@@ -31,7 +31,6 @@ Plug 'tpope/vim-surround'
 Plug 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 " Git
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
@@ -43,6 +42,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree-git-plugin'
 
 call plug#end()
 

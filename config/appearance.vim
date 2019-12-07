@@ -9,7 +9,13 @@ let g:deoplete#enable_at_startup = 1
 
 let g:go_auto_type_info = 1
 
+let g:ale_haskell_ghc_options = "-fno-code -v0 -g -package -g HUnit -g -package -g tasty -g -package -g mtl"
+let g:hdevtools_options = "-g -package -g HUnit -g -package -g tasty -g -package -g mtl"
+
+let NERDTreeIgnore=['\.o$', '\~$', '\.hi$']
+
 " Other settings
+au FocusGained,BufEnter * :silent! !
 set expandtab
 set hidden
 set list
