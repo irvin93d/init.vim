@@ -1,6 +1,10 @@
 " ALE
 let g:go_fmt_command = "goimports"
-"let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+ \ 'javascript': ['eslint'],
+ \ 'typescript': ['eslint']
+ \ }
 
 let g:SuperTabDefaultCompletionType = "context"
 

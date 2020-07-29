@@ -26,6 +26,10 @@ Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
 Plug 'ervandew/supertab'
 Plug 'dense-analysis/ale'
 
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+
 "" Editing
 Plug 'editorconfig/editorconfig-vim'
 Plug 'maksimr/vim-jsbeautify'
